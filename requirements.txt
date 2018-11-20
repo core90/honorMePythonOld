@@ -49,7 +49,6 @@ oauthlib==2.0.7
 passlib==1.7.1
 pdfrw==0.4
 pexpect==4.4.0
-PIL==1.1.7
 Pillow==5.1.0
 pillowcase==2.0.0
 plotly==2.5.1
