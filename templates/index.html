@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<head>
+
+  <style>
+    input[type=submit] {
+      color: white;
+      background-color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+      <div class="head">
+        <h1>Welcome to Clan Honor Me!</h1>
+        <h2>Honor Me is a fun-gaming-clan from Austria, founded back in 2017, with the goal to get a free drink at the VulkanLan ;).
+        </h2>
+        <br>
+        <h2>Today, we are already counting 13 Members. If you are interrested in joining us, please feel free to watch this video to get an idea how our clan works:
+        </h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <iframe width="1000" height="560" src="https://www.youtube.com/embed/BhBNRgqPPAU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2>For more information, contact us on
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a href="https://www.facebook.com/HonorMeClan/" class="fa fa-facebook"></a>,
+        <br>
+        or use the
+        <form action='/contact' style="display: inline-block;">
+          <input type='submit' value='contact e-mail formular!'>
+        </form>
+
+        </h2>
+      </div>
+
+{% endblock %}

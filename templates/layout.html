@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="/static/styles.css" rel="stylesheet" />
+
+        <title>Honor Me {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        {% if session.user_id %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="members">Members</a></li>
+            <li><a href="gallery">Gallery</a></li>
+            <li><a href="achievements">Achievements</a></li>
+            <li><a href="hub">Hub</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        {% else %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="members">Members</a></li>
+            <li><a href="gallery">Gallery</a></li>
+            <li><a href="achievements">Achievements</a></li>
+            <li><a href="hub">Hub</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="register">Register</a></li>
+        </ul>
+        {% endif %}
+        <div id="logo">
+            <div class="content">
+            {% block main %}
+                {% if error %}
+                     <p class=error><strong>Error:</strong> {{ error }}
+                {% endif %}
+            {% endblock %}
+            </div>
+        </div>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+      <footer class="container-fluid text-center">
+        <h5 class="social">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <b>Follow us on:</b>
+          <!-- Add font awesome icons -->
+          <a href="https://www.facebook.com/HonorMeClan/" class="fa fa-facebook"></a>
+          <a href="https://www.youtube.com/channel/UCnBY8hlI79oiX4lhf-iG5eQ" class="fa fa-youtube"></a></h5>
+        <h5 class="copyright">&#169; by Coregamer90</h5>
+      </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hub
+{% endblock %}
+
+{% block main %}
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $( function() {
+
+        $( "#datepicker" ).datepicker();
+
+        } );
+
+    </script>
+
+</head>
+
+    <div class="head">
+
+<h4>To create an event, please select Date, Time, a Game and how many Players in total can join.</h4>
+
+<h4>If you want to join an existing event, please use the form below (Select number of event).</h4>
+
+    <br>
+
+        <form action="/hub" name="myForm" method="post">
+            <div class="form-group">
+                Date:<input autocomplete="off" aufofocus="on" name="date" input type="date" id="datepicker" placeholder="mm/dd/yyyy" required>
+
+                Time:<input autocomplete="off" name="time" input type="time" id="time" placeholder="hh:mm" required>
+            </div>
+
+                <select name="game" id="game" type="text" required>
+                <option disabled selected value="">Game</option>
+                <option value="Rocket League">Rocket League</option>
+                <option value="PUBG">PUBG</option>
+                <option value="League of Legends">League ofLegends</option>
+                <option value="CS:GO">CS:GO</option>
+                <option value="Monster Hunter World">Monster Hunter World</option>
+
+            </select>
+
+            <select class="select" name="numberPlayers" id="numberPlayers" type="number" required>
+                <option disabled selected value="">Number of Players</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+                <br>
+
+            <div>
+            <button class="btn btn-primary" type="submit">Create Event</button>
+            </div>
+
+        </form>
+
+    <span id='message'></span>
+
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+<br>
+<br>
+    <table>
+        <tr>
+            <th>Event Number</th>
+
+            <th>Creator</th>
+
+            <th>Date</th>
+
+            <th>Time</th>
+
+            <th>Game</th>
+
+            <th>Number of Players</th>
+
+            <th>Players</th>
+
+        </tr>
+    {% for data in event %}
+        <tr>
+            <td>{{data.number}}</td>
+
+            <td>{{data.creator}}</td>
+
+            <td>{{data.date}}</td>
+
+            <td>{{data.time}}</td>
+
+            <td>{{data.game}}</td>
+
+            <td>{{data.numberPlayers}}</td>
+
+            <td>{{data.players}}</td>
+    {% endfor %}
+            </tr>
+    </table>
+    <br>
+    <br>
+            <form action="/hub" name="joinForm" method="post">
+                <select class="select" name="eventNumber" type="number" id="eventNumber" required>
+                    <option disabled selected value="">Number of Event</option>
+                    {% for data in event %}
+                    <option value="{{data.number}}">{{data.number}}</option>
+                    {% endfor %}
+                </select>
+            <button class="btn btn-primary" type="submit">Join</button>
+        </form>
+    </div>
+{% endblock %}

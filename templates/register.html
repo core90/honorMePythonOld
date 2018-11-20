@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+  <script type="text/javascript">
+      function validate() {
+        var x = document.myForm.password.value;
+        var y = document.myForm.confirmation.value;
+        if (x != y) {
+          document.getElementById("message").innerHTML="passwords dont match";
+          document.getElementById("message").style.color="Red";
+          return false;
+        }
+      }
+  </script>
+
+    <div class="head">
+
+    <form action="/register" name="myForm" onsubmit="return(validate());" method="post" >
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required/>
+        </div>
+        <div id= "div1" class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required/>
+        </div>
+        <div id= "div1" class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password (again)" type="password" required/>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+      <span id='message'></span>
+
+      {% if error %}
+           <p class=error><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+
+{% endblock %}
