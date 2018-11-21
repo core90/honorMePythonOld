@@ -1,5 +1,4 @@
 import os
-import local_settings
 
 from datetime import datetime
 from cs50 import SQL, eprint

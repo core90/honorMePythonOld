@@ -71,8 +71,6 @@ requests-oauthlib==0.8.0
 six==1.11.0
 SQLAlchemy==1.2.6
 sqlparse==0.2.4
-style50==2.6.2
-submit50==2.4.8
 termcolor==1.1.0
 tinycss2==0.6.1
 traitlets==4.3.2
