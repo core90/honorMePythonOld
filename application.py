@@ -99,7 +99,7 @@ def hub():
             playerLoggedIn = db.execute("SELECT username FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["username"]
             playerTable = db.execute("SELECT number, player FROM players WHERE number = :eventNumber", eventNumber=eventNumber)
             maxPlayer = db.execute("SELECT numberPlayers FROM event WHERE number = :eventNumber",
-                                   eventNumber=eventNumber)[0]["numberplayers"]
+                                   eventNumber=eventNumber)[0]["numberPlayers"]
 
             # Chek if event is full
             if (len(playerTable) >= maxPlayer):
