@@ -139,7 +139,7 @@ def hub():
         # If user reaches page per redirect or GET request
         # Query db for data
         event = db.execute("SELECT e.number, e.creator, e.date, e.time, e.game, e.numberPlayers, \
-                           (SELECT GROUP_CONCAT(p.player) FROM players p WHERE p.number = e.number) \
+                           (SELECT string_agg(DISTINCT p.player, ',') FROM players p WHERE p.number = e.number) \
                             AS players FROM event e ORDER BY e.number ASC")
 
         return render_template("hub.html", event=event)
