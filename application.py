@@ -1,7 +1,7 @@
 import os
 
 from datetime import datetime
-from cs50 import SQL, eprint
+from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_mail import Mail, Message
 from flask_session import Session
