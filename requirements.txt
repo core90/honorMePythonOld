@@ -28,11 +28,12 @@ Flask-Session==0.3.1
 Flask-Silk==0.2
 Flask-SQLAlchemy==2.3.2
 future==0.16.0
-gunicorn
+gunicorn==19.9.0
 help50==2.0.1
 html5lib==1.0.1
 icdiff==1.9.1
 idna==2.6
+ikp3db==1.4
 ipython-genutils==0.2.0
 isort==4.3.4
 itsdangerous==0.24
@@ -50,9 +51,11 @@ oauthlib==2.0.7
 passlib==1.7.1
 pdfrw==0.4
 pexpect==4.4.0
+PIL==1.1.7
 Pillow==5.1.0
 pillowcase==2.0.0
 plotly==2.5.1
+psycopg2==2.7.6.1
 ptyprocess==0.5.2
 pycodestyle==2.3.1
 pycparser==2.18
@@ -72,6 +75,8 @@ requests-oauthlib==0.8.0
 six==1.11.0
 SQLAlchemy==1.2.6
 sqlparse==0.2.4
+style50==2.6.2
+submit50==2.4.8
 termcolor==1.1.0
 tinycss2==0.6.1
 traitlets==4.3.2
