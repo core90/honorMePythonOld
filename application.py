@@ -20,7 +20,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure Mail Server
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config['MAIL_USERNAME'] = "clan.honor.me@gmail.com"
-app.config['MAIL_PASSWORD'] = os.environ["pw_honor"]
+app.config['MAIL_PASSWORD'] = os.environ["PW_MAIL"]
 app.config["MAIL_PORT"] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config["MAIL_USE_SSL"] = True
@@ -52,7 +52,7 @@ error = None
 
 @app.route("/")
 def index():
-    eprint(os.environ["pw_honor"])
+
     return render_template("/index.html")
 
 
