@@ -19,7 +19,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Configure Mail Server
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config['MAIL_USERNAME'] = "clan.honor.me@gmail.com"
+app.config['MAIL_USERNAME'] = os.environ["USER_MAIL"]
 app.config['MAIL_PASSWORD'] = os.environ["PW_MAIL"]
 app.config["MAIL_PORT"] = 465
 app.config['MAIL_USE_TLS'] = False
@@ -44,7 +44,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("postgres://fybljbtjcgjkst:a806f19f3debc10d81fd69ceb2f8651f9438192aea5918f08c4edd99827c3990@ec2-54-246-85-234.eu-west-1.compute.amazonaws.com:5432/dabfsmfgenkbhs")
+db = SQL("DATABASE_URL")
 
 # Set error to none
 error = None
@@ -262,8 +262,10 @@ def register():
             return render_template("register.html", error=error)
 
         # Insert user to database and log him into session
-        session["user_id"] = db.execute("INSERT INTO users (username, hash) VALUES(:username, :hash)", username=request.form.get
-                                        ("username"), hash=generate_password_hash(request.form.get("password")))
+        #session["user_id"] = db.execute("INSERT INTO users (username, hash) VALUES(:username, :hash)", username=request.form.get
+                                        #("username"), hash=generate_password_hash(request.form.get("password")))
+
+        session["user_id"] = db.execute("INSERT INTO users (id, username, hash) VALUES ('3', 'hey', 'doodad')")
 
         return redirect("/")
 
