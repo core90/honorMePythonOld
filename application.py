@@ -44,7 +44,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL(os.environ["DATABASE_URL"])
+#db = SQL(os.environ["DATABASE_URL"])
 
 # Set error to none
 error = None
@@ -77,7 +77,7 @@ def achievements():
 """@app.route("/hub", methods=["GET", "POST"])
 @login_required
 def hub():
-    """Creating user events"""
+    # Creating user events
 
     if request.method == "POST":
 
@@ -179,7 +179,7 @@ def contact():
 
 """@app.route("/login", methods=["GET", "POST"])
 def login():
-    """Log user in"""
+    # Log user in
 
     # Forget any user_id
     session.clear()
@@ -219,7 +219,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
+    #Log user out
 
     # Forget any user_id
     session.clear()
@@ -230,7 +230,7 @@ def logout():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register user"""
+    #Register user
 
     if request.method == "POST":
 
