@@ -74,7 +74,7 @@ def achievements():
     return render_template("achievements.html")
 
 
-@app.route("/hub", methods=["GET", "POST"])
+"""@app.route("/hub", methods=["GET", "POST"])
 @login_required
 def hub():
     """Creating user events"""
@@ -142,7 +142,7 @@ def hub():
                            (SELECT string_agg(DISTINCT p.player, ',') FROM players p WHERE p.number = e.number) \
                             AS players FROM event e ORDER BY e.number ASC")
 
-        return render_template("hub.html", event=event)
+        return render_template("hub.html", event=event)"""
 
 
 @app.route("/contact", methods=["GET", "POST"])
@@ -177,7 +177,7 @@ def contact():
         return render_template("contact.html")
 
 
-@app.route("/login", methods=["GET", "POST"])
+"""@app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
 
@@ -272,7 +272,7 @@ def register():
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("register.html")
-
+"""
 
 def errorhandler(e):
     """Handle error"""
