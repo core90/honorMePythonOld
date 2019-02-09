@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Contact
+    Contact Formular
 {% endblock %}
 
 {% block main %}
@@ -12,6 +12,7 @@
     var lname = document.forms["myForm"]["lastname"].value;
     var email = document.forms["myForm"]["email"].value;
     var subject = document.forms["myForm"]["subject"].value;
+
         if ((fname == "") || (lname == "") || (email == "") || (subject = "")) {
             alert("Name must be filled out");
             return false;
