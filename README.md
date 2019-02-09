@@ -1,6 +1,6 @@
 # Honor Me Clan Website
 
-** Features:
+### Features:
 
 * Landing Page
 * Members
