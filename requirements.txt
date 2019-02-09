@@ -14,7 +14,6 @@ click==6.7
 cs50==2.4.4
 cssselect2==0.2.1
 decorator==4.2.1
-defusereques==2.1.5
 EditorConfig==0.12.1
 feedparser==5.2.1
 Flask==1.0.2
