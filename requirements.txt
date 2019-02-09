@@ -65,7 +65,6 @@ PyPDF2==1.26.0
 Pyphen==0.9.4
 python-magic==0.4.15
 pytz==2018.3
-PyYAML==3.12
 render50==3.0.2
 requests==2.21.0
 requests-oauthlib==0.8.0
@@ -76,7 +75,6 @@ termcolor==1.1.0
 tinycss2==0.6.1
 traitlets==4.3.2
 twython==3.6.0
-urllib3==1.22
 virtualenv==15.2.0
 WeasyPrint==0.42.3
 webencodings==0.5.1
