@@ -4,6 +4,8 @@
 
     <head>
 
+        <meta name="description" content="Honor Me Gaming Clan Info">
+        <meta name="keywords" content="HonorMe, Clan, Gaming">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +34,7 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-        <title>Honor Me {% block title %}{% endblock %}</title>
+        <title>HonorMe {% block title %}{% endblock %}</title>
 
         <meta name="google-site-verification" content="oFxPcFsfJXqPECjPjxprzRSGXg2Dm57V6OzaAzD2H4Q" />
 
@@ -40,17 +42,6 @@
 
     <body>
 
-        {% if session.user_id %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="members">Members</a></li>
-            <li><a href="gallery">Gallery</a></li>
-            <li><a href="achievements">Achievements</a></li>
-            <li><a href="hub">Hub</a></li>
-            <li><a href="contact">Contact</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
-        {% else %}
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="members">Members</a></li>
@@ -59,7 +50,6 @@
             <li><a href="contact">Contact</a></li>
 
         </ul>
-        {% endif %}
 
         <div id="logo">
         <div id="content">
